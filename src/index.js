@@ -12,11 +12,14 @@ function Greeting() {
             <div className='greets'>
                 <h1>Hello there world</h1>
                 <ul>
-                    <li>hello list</li>
+                    <li>hello World</li>
                 </ul>
             </div>
             <div>
-                <p>second div trial on paragraph and make the greets var rather than const</p>
+                {/* put the Person here */}
+                <Person />
+                {/* now the message */}
+                <Message />
             </div>
         </>
     )
@@ -27,6 +30,13 @@ function Greeting() {
 //     return React.createElement('h1', {}, 'hello world!');
 // };
 
+const Message = () => {return (
+    <p>this is john doe message from components defined below!!</p>
+)}
 
+// const Person = () => {return (
+//     <h2>John Doe</h2>
+// )}
+const Person = () => <h2>John Doe</h2>
 
 reactDom.render(<Greeting/>, document.getElementById('root'));
