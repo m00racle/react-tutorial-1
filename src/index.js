@@ -1,42 +1,31 @@
 import React from "react";
 import reactDom from "react-dom";
 
-// function that will make React knows this is special
-// first letter capitalized means this is a component
-// this is stateless functional component
-// always return JSX
+function BookList() {
+    return (
+        <section>
+            <Image/>
+            <Title/>
+            <Title/>
+            <Author/>
+        </section>
+    );
+};
 
-function Greeting() {
-    var greets = (
-        <>
-            <div className='greets'>
-                <h1>Hello there world</h1>
-                <ul>
-                    <li>hello World</li>
-                </ul>
-            </div>
-            <div>
-                {/* put the Person here */}
-                <Person />
-                {/* now the message */}
-                <Message />
-            </div>
-        </>
-    )
-    return greets
-}
+const Title = () => {
+    return (
+        <h1>Midnight in Washington: How We Almost Lost Our Democracy and Still Could </h1>
+    );
+};
 
-// const Greeting = () => {
-//     return React.createElement('h1', {}, 'hello world!');
-// };
+const Author = () => { return (
+    <h3>Adam Schiff</h3>
+);};
 
-const Message = () => {return (
-    <p>this is john doe message from components defined below!!</p>
-)}
+const Image = () =>{
+    return (
+        <img src="https://images-na.ssl-images-amazon.com/images/I/51TRfhQqHaL._SX327_BO1,204,203,200_.jpg" alt="" />
+    );
+};
 
-// const Person = () => {return (
-//     <h2>John Doe</h2>
-// )}
-const Person = () => <h2>John Doe</h2>
-
-reactDom.render(<Greeting/>, document.getElementById('root'));
+reactDom.render(<BookList/>, document.getElementById('root'));
