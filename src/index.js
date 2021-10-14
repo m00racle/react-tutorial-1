@@ -4,11 +4,20 @@ import reactDom from "react-dom";
 function BookList() {
     return (
         <section>
+           <Book/>
+           <Book/>
+           <Book/>
+        </section>
+    );
+};
+
+const Book = () => {
+    return (
+        <article>
             <Image/>
             <Title/>
-            <Title/>
             <Author/>
-        </section>
+        </article>
     );
 };
 
@@ -24,7 +33,7 @@ const Author = () => { return (
 
 const Image = () =>{
     return (
-        <img src="https://images-na.ssl-images-amazon.com/images/I/51TRfhQqHaL._SX327_BO1,204,203,200_.jpg" alt="" />
+        <img src="https://images-na.ssl-images-amazon.com/images/I/81GsPCydFPL._AC_UL200_SR200,200_.jpg" alt="Book" />
     );
 };
 
