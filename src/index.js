@@ -4,41 +4,36 @@ import reactDom from "react-dom";
 // css
 import './index.css';
 
+// setup
+const firstBook = {
+    img: "https://images-na.ssl-images-amazon.com/images/I/81GsPCydFPL._AC_UL200_SR200,200_.jpg",
+    title: "Midnight in Washington: How We Almost Lost Our Democracy and Still Could",
+    author: "Adam Schiff"
+}
+
+const secondBook = {
+    img: "https://images-na.ssl-images-amazon.com/images/I/71rdsaOMvVL._UX300__PJku-headphones-v1,TopRight,0,-50_AC_UL254_SR254,254_.jpg",
+    title: "Reminders of Him: A Novel",
+    author: "Colleen Hoover"
+}
+
 function BookList() {
     return (
         <section className="booklist">
-           <Book/>
-           <Book/>
-           <Book/>
-           <Book/>
-           <Book/>
+           <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
+           <Book img={secondBook.img} title={secondBook.title} author={secondBook.author}/>
         </section>
     );
 };
 
-const Book = () => {
+const Book = (props) => {
+    
     return (
         <article className="book">
-            <Image/>
-            <Title/>
-            <Author/>
+            <img src= {props.img} alt=""/>
+            <h1>{props.title}</h1>
+            <h4>{props.author}</h4>
         </article>
-    );
-};
-
-const Title = () => {
-    return (
-        <h1>Midnight in Washington: How We Almost Lost Our Democracy and Still Could </h1>
-    );
-};
-
-const Author = () => { return (
-    <h4 style={{color:'617d98', fontSize:'0.75rem', marginTop:'0.25rem'}}>Adam Schiff</h4>
-);};
-
-const Image = () =>{
-    return (
-        <img src="https://images-na.ssl-images-amazon.com/images/I/81GsPCydFPL._AC_UL200_SR200,200_.jpg" alt="Book" />
     );
 };
 
